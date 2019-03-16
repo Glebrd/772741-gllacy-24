@@ -217,11 +217,11 @@ img {
   flex-direction: column;
 }
 
-.page-header__workinghours {
+.header__workinghours {
   margin-left: auto;
 }
 
-.page-header__phone-number {
+.header__phone-number {
   margin-left: auto;
 }
 
@@ -625,7 +625,7 @@ img {
   line-height: 20px;
 }
 
-.contacts__street,
+.contacts_address--bold,
 .contacts__link {
   font-size: 18px;
   font-weight: 700;
