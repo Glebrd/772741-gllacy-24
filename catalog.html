@@ -6,7 +6,7 @@
     <title>HTML Academy: Gllacy</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-min.css" rel="stylesheet">
 </head>
 
 <body class="page-body page-body--green page-catalog">
@@ -16,18 +16,78 @@
                     alt="glacy shop" height="64" width="154"></a>
             <ul class="site-navigation main-nav__site-navigation">
                 <li class="site-navigation__item"><a href="#"
-                        class="site-navigation__link site-navigation__link--active">Каталог</a></li>
+                        class="site-navigation__link site-navigation__link--current">Каталог</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" class="dropdown-menu__link">Новинки</a></li>
+                        <li><a href="catalog.html"
+                                class="dropdown-menu__link dropdown-menu__link--current">Сливочное</a></li>
+                        <li><a href="#" class="dropdown-menu__link">Щербеты</a></li>
+                        <li><a href="#" class="dropdown-menu__link">Фруктовый лед</a></li>
+                        <li><a href="#" class="dropdown-menu__link">Мелорин</a></li>
+                    </ul>
+                </li>
                 <li class="site-navigation__item"><a href="#" class="site-navigation__link">Доставка и оплата</a>
                 </li>
                 <li class="site-navigation__item"><a href="#" class="site-navigation__link">О Компании</a></li>
             </ul>
             <ul class="user-navigation main-nav__user-navigation">
                 <li class="user-navigation__item"><a href="#"
-                        class="user-navigation__link user-navigation__link--search"></a></li>
+                        class="user-navigation__link user-navigation__link--search"></a>
+                    <form action="https://echo.htmlacademy.ru" class="search-form" method="get">
+                        <p>
+                            <input type="text" class="search" id="user-search" name="search" placeholder="Что ищем?">
+                            <label for="user-search" class="visually-hidden">Поиск</label>
+                        </p>
+                    </form>
+                </li>
                 <li class="user-navigation__item"><a href="#"
-                        class="user-navigation__link user-navigation__link--log-in">Вход</a></li>
+                        class="user-navigation__link user-navigation__link--log-in">Вход</a>
+                    <form action="https://echo.htmlacademy.ru" class="login-form" method="get">
+                        <p>
+                            <input type="text" class="email" id="user-email" name="email"
+                                placeholder="Электронная почта">
+                            <label for="user-email" class="visually-hidden">Введите адрес электронной почты</label>
+                        </p>
+                        <p>
+                            <input type="password" class="password" id="user-password" name="password"
+                                placeholder="Пароль">
+                            <label for="user-password" class="visually-hidden">Введите Ваш пароль</label>
+                        </p>
+                        <div class="login-options">
+                            <button class=" button button-user-login" type="submit">Войти</button>
+                            <p class="login-options__more">
+                                <a href="#" class="login-options__item">Забыли пароль?</a>
+                                <a href="#" class="login-options__item">Новая регистрация</a>
+                            </p>
+                        </div>
+                    </form>
+                </li>
                 <li class="user-navigation__item"><a href="#"
-                        class="user-navigation__link user-navigation__link--cart">2 товара</a></li>
+                        class="user-navigation__link user-navigation__link--cart user-navigation__link--full-cart">2
+                        товара</a>
+                    <form action="https://echo.htmlacademy.ru" class="cart-form" method="get">
+                        <div class="product-wrap"><button class="remove-from-cart" type="button"
+                                aria-label="Удалить товар из корзины"></button>
+                            <img src="img/small-orange-cream.png" width="33" height="33" alt="Первый товар"
+                                class="product-preview">
+                            <p class="product-name">Пломбир с апельсиновым джемом</p>
+                            <p class="quantity">1,5 кг х<span class="price-per-item"> 200 руб.</span></p>
+                            <p class="product-cost">300 руб.</p>
+                        </div>
+                        <div class="product-wrap"><button class="remove-from-cart" type="button"
+                                aria-label="Удалить товар из корзины"></button>
+                            <img src="img/small-strawberry-cream.png" width="33" height="33" alt="Второй товар"
+                                class="product-preview">
+                            <p class="product-name">Клубничный пломбир с присыпкой
+                                из белого шоколада</p>
+                            <p class="quantity">1,5 кг х<span class="price-per-item"> 300 руб.</span></p>
+                            <p class="product-cost">450 руб.</p>
+                        </div>
+                       
+                        <p class="total-cost">Итого: 750 руб.</p>
+                        <button type="submit" class="button order-button">Оформить заказ</button>
+                    </form>
+                </li>
             </ul>
         </nav>
         <div class="page-header__bottom">
@@ -52,8 +112,8 @@
         <section class="catalog__filter filter">
             <form action="https://echo.htmlacademy.ru" class="filter__form form">
                 <fieldset class="form__sort">
-                    <div class="sort-wrap">
                         <legend class="form__title">Сортировка:</legend>
+                        <div class="sort-wrap">
                         <select name="criterion" id="sort-list" class="sort">
                             <option class="sort__item" value="popular">по популярности</option>
                             <option class="sort__item" value="fat-content">по МДЖ</option>
@@ -109,89 +169,91 @@
         </section>
         <section class="catalog__products products container">
             <div class="products__item products__item--orange">
-                <img src="img/orange.png" alt="Апельсин и цедра" class="products__photo">
+                <img src="img/orange.png" alt="Апельсин и цедра" class="products__photo" width="267" height="267">
                 <a class="products__text link" href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
                 <a href="#" class="products__popup-button button">Быстрый просмотр</a>
                 <p class="products__price">310₽<span class="products__weight">/кг</span></p>
             </div>
             <div class="products__item products__item--coffee"><img src="img/coffee.png" alt="Кофе и шоколад"
-                    class="products__photo">
+                    class="products__photo" width="267" height="267">
                 <a class="products__text link" href="#">Сливочно-кофейное с кусочками шоколада</a>
                 <a href="#" class="products__popup-button button">Быстрый просмотр</a>
                 <p class="products__price">380₽<span class="products__weight">/кг</span></p>
             </div>
             <div class="products__item products__item--strawberry"><img src="img/strawberry.png"
-                    alt="Клубника и белый шоколад" class="products__photo">
+                    alt="Клубника и белый шоколад" class="products__photo" width="267" height="267">
                 <a class="products__text link" href="#">Сливочно-клубничное с присыпкой из белого шоколада</a>
                 <a href="#" class="products__popup-button button">Быстрый просмотр</a>
                 <p class="products__price">355₽<span class="products__weight">/кг</span></p>
             </div>
             <div class="products__item products__item--caramel"><img src="img/caramel.png" alt="Крем-брюле и карамель"
-                    class="products__photo">
+                    class="products__photo" width="267" height="267">
                 <a class="products__text link" href="#">Сливочное крем-брюле с карамельной подливкой</a>
                 <a href="#" class="products__popup-button button">Быстрый просмотр</a>
                 <p class="products__price">415₽<span class="products__weight">/кг</span></p>
             </div>
             <div class="products__item products__item--cowberry-cream"><img src="img/cowberry-cream.png"
-                    alt="Сливки и брусника" class="products__photo">
+                    alt="Сливки и брусника" class="products__photo" width="267" height="267">
                 <a class="products__text link" href="#">Сливочное с брусничным джемом</a>
                 <a href="#" class="products__popup-button button">Быстрый просмотр</a>
                 <p class="products__price">325₽<span class="products__weight">/кг</span></p>
             </div>
             <div class="products__item products__item--blueberry-cream"><img src="img/blueberry-cream.png"
-                    alt="Сливки и черника" class="products__photo">
+                    alt="Сливки и черника" class="products__photo" width="267" height="267">
                 <a class="products__text link" href="#">Сливочно-черничное с цельными ягодами черники</a>
                 <a href="#" class="products__popup-button button">Быстрый просмотр</a>
                 <p class="products__price">410₽<span class="products__weight">/кг</span></p>
             </div>
             <div class="products__item products__item--lemon-cream"><img src="img/lemon-cream.png" alt="Сливки и лимон"
-                    class="products__photo">
+                    class="products__photo" width="267" height="267">
                 <a class="products__text link" href="#">Сливочно-лимонное с карамельной присыпкой</a>
                 <a href="#" class="products__popup-button button">Быстрый просмотр</a>
                 <p class="products__price">375₽<span class="products__weight">/кг</span></p>
             </div>
             <div class="products__item products__item--chocolate-cream"><img src="img/chocolate-cream.png"
-                    alt="Сливки и шоко-стружка" class="products__photo">
+                    alt="Сливки и шоко-стружка" class="products__photo" width="267" height="267">
                 <a class="products__text link" href="#">Сливочное с шоколадной стружкой</a>
                 <a href="#" class="products__popup-button button">Быстрый просмотр</a>
                 <p class="products__price">320₽<span class="products__weight">/кг</span></p>
             </div>
             <div class="products__item products__item--vanilla-cream"><img src="img/vanilla-cream.png"
-                    alt="Сливки и шоко-ваниль" class="products__photo">
+                    alt="Сливки и шоко-ваниль" class="products__photo" width="267" height="267">
                 <a class="products__text link" href="#">Сливочно-ванильное с кусочками шоколада</a>
                 <a href="#" class="products__popup-button button">Быстрый просмотр</a>
                 <p class="products__price">440₽<span class="products__weight">/кг</span></p>
             </div>
             <div class="products__item products__item--menthol-cream"><img src="img/menthol-cream.png"
-                    alt="Сливки и ментол" class="products__photo">
+                    alt="Сливки и ментол" class="products__photo" width="267" height="267">
                 <a class="products__text link" href="#">Сливочноe с ментоловым сиропом</a>
                 <a href="#" class="products__popup-button button">Быстрый просмотр</a>
                 <p class="products__price">435₽<span class="products__weight">/кг</span></p>
             </div>
             <div class="products__item products__item--oreo-cream"><img src="img/oreo-cream.png" alt="Сливки и орео"
-                    class="products__photo">
+                    class="products__photo" width="267" height="267">
                 <a class="products__text link" href="#">Сливочное с кусочками черного шоколада</a>
                 <a href="#" class="products__popup-button button">Быстрый просмотр</a>
                 <p class="products__price">355₽<span class="products__weight">/кг</span></p>
             </div>
             <div class="products__item products__item--mint-cream"><img src="img/mint-cream.png" alt="Сливки и орео"
-                    class="products__photo">
+                    class="products__photo" width="267" height="267">
                 <a class="products__text link" href="#">Сливочное с мятным сиропом</a>
                 <a href="#" class="products__popup-button button">Быстрый просмотр</a>
                 <p class="products__price">420₽<span class="products__weight">/кг</span></p>
             </div>
+
         </section>
         <div class="catalog__navigation paginator">
 
-            <a href="#" class="prev disabled"><i class="arrow left"></i></a>
             <ul class="paginator__list">
+                <li><a href="#" class="paginator__item paginator__item--inactive" aria-label="Назад"><i class="arrow left"></i></a></li>
                 <li><a href="catalog.html" class="paginator__item current">1</a></li>
                 <li><a href="#" class="paginator__item">2</a></li>
                 <li><a href="#" class="paginator__item">3</a></li>
                 <li><a href="#" class="paginator__item">4</a></li>
                 <li><a href="#" class="paginator__item">5</a></li>
+                <li><a href="#" class="paginator__item" aria-label="Вперед"><i class="arrow right"></i></a></li>
+
             </ul>
-            <a href="#" class="next"><i class="arrow right"></i></a>
         </div>
     </main>
 
