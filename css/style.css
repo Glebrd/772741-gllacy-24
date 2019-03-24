@@ -1193,12 +1193,12 @@ li:first-child > .dropdown-menu__link {
 
 .map {
   height: 430px;
-  background-color: #fff;
   background: url("../img/map.jpg") center no-repeat;
   background-size: 1200px 430px;
   background-position: bottom center;
   margin-top: 40px;
   position: relative;
+  background-color: #fff;
 }
 
 .contacts {
