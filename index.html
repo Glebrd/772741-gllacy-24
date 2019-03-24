@@ -6,7 +6,7 @@
 	<title>HTML Academy: Gllacy</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
 	<link href="css/normalize.css" rel="stylesheet">
-	<link href="css/style-min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
 </head>
 
 <body class="page-body page-body--green page-index">
@@ -14,7 +14,7 @@
 		<nav class="main-nav">
 			<img class="main-nav__logo logo" src="img/logo-gllacy.svg" alt="gllacy shop" height="64" width="154">
 			<ul class="site-navigation main-nav__site-navigation">
-				<li class="site-navigation__item"><a href="#" class="site-navigation__link">Каталог</a>
+				<li class="site-navigation__item site-navigation__item--catalog"><a href="#" class="site-navigation__link">Каталог</a>
 					<ul class="dropdown-menu">
 						<li><a href="#" class="dropdown-menu__link">Новинки</a></li>
 						<li><a href="catalog.html" class="dropdown-menu__link">Сливочное</a></li>
@@ -74,18 +74,21 @@
 	</header>
 	<main class="page-main">
 		<section class="slider container slider--first-slide">
-			<p class="slider__text slider__text--first-slide">Крем-брюле и пломбир<br>
+			<p class="slider__text slider__text--first-slide">Крем-брюле и пломбир
 				с малиновым джемом</p>
-			<p class="slider__text slider__text--second-slide slider__text--hide">Шоколадный пломбир<br>
+			<p class="slider__text slider__text--second-slide slider__text--hide">Шоколадный пломбир
 				и лимонный сорбет</p>
-			<p class="slider__text slider__text--third-slide slider__text--hide">Пломбир с помадкой<br>
+			<p class="slider__text slider__text--third-slide slider__text--hide">Пломбир с помадкой
 				и клубничный щербет</p>
 			<div class="slider__controls">
-				<button class="slider__first-slide-btn slider-btn slider-btn--checked"></button>
-				<button class="slider__second-slide-btn slider-btn"></button>
-				<button class="slider__third-slide-btn slider-btn"></button>
+				<button class="slider__first-slide-btn slider-btn slider-btn--checked" aria-label="Первый слайд: Крем-брюле и пломбир
+				с малиновым джемом"></button>
+				<button class="slider__second-slide-btn slider-btn" aria-label="Второй слайд: Шоколадный пломбир
+				и лимонный сорбет"></button>
+				<button class="slider__third-slide-btn slider-btn" aria-label="Третий слайд: Пломбир с помадкой
+				и клубничный щербет"></button>
 			</div>
-			<a class="button slider__button">Давайте оба!</a>
+			<a class="button slider__button" href="#">Давайте оба!</a>
 		</section>
 		<section class="promo container">
 			<div class="promo__block promo__block--raspberry">
@@ -108,24 +111,24 @@
 				<img src="img/orange.png" alt="Апельсин и цедра" class="products__photo" width="267" height="267">
 				<a class="products__text link" href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
 				<a href="#" class="products__popup-button button">Быстрый просмотр</a>
-				<p class="products__price">310₽<span class="products__weight">/кг</span></p>
+				<p class="products__price">310<span class="currency">₽</span><span class="products__weight">/кг</span></p>
 			</div>
 			<div class="products__item products__item--coffee"><img src="img/coffee.png" alt="Кофе и шоколад"
 					class="products__photo" width="267" height="267">
 				<a class="products__text link" href="#">Сливочно-кофейное с кусочками шоколада</a>
 				<a href="#" class="products__popup-button button">Быстрый просмотр</a>
-				<p class="products__price">380₽<span class="products__weight">/кг</span></p>
+				<p class="products__price">380<span class="currency">₽</span><span class="products__weight">/кг</span></p>
 			</div>
 			<div class="products__item products__item--strawberry"><img src="img/strawberry.png"
 					alt="Клубника и белый шоколад" class="products__photo" width="267" height="267">
 				<a class="products__text link" href="#">Сливочно-клубничное с присыпкой из белого шоколада</a>
 				<a href="#" class="products__popup-button button">Быстрый просмотр</a>
-				<p class="products__price">355₽<span class="products__weight">/кг</span></p>
+				<p class="products__price">355<span class="currency">₽</span><span class="products__weight">/кг</span></p>
 			</div>
 			<div class="products__item products__item--caramel"><img src="img/caramel.png" alt="Крем-брюле и карамель"
 					class="products__photo" width="267" height="267">
 				<a class="products__text link" href="#">Сливочное крем-брюле с карамельной подливкой</a>
-				<p class="products__price">415₽<span class="products__weight">/кг</span></p>
+				<p class="products__price">415<span class="currency">₽</span><span class="products__weight">/кг</span></p>
 				<a href="#" class="products__popup-button button">Быстрый просмотр</a>
 			</div>
 
@@ -164,7 +167,7 @@
 				<p class="newsletter__disclaimer">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего
 					самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды.
 					Честно =) </p>
-				
+
 				<p class="newsletter__subsciption"><input type="email" name="mail" id="user-mail"
 						placeholder="Электронная почта" class="newsletter__input"><button
 						class="button newsletter__button">Отправить</button></p>
@@ -172,18 +175,18 @@
 			</form>
 		</div>
 		<section class="map">
-			<iframe
-				class="iframe-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.605730689046!2d30.327424763765432!3d59.93868423574215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2sBolshaya+Konyushennaya+Street%2C+19%2F8%2C+Sankt-Peterburg%2C+191186!5e0!3m2!1ssr!2sru!4v1552572349812"
+			<iframe class="iframe-map"
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.605730689046!2d30.327424763765432!3d59.93868423574215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2sBolshaya+Konyushennaya+Street%2C+19%2F8%2C+Sankt-Peterburg%2C+191186!5e0!3m2!1ssr!2sru!4v1552572349812"
 				height="430" style="border:0" allowfullscreen></iframe>
 			<div class="contacts-wrapper container">
 				<div class="contacts">
-					<p class="contacts__address">Адрес главного офиса <br>
-						и офлайн-магазина: <span class="contacts_street">ул. Большая Конюшенная <br> 19/8,
+					<p class="contacts__address"><span class="contacts__text">Адрес главного офиса
+						и офлайн-магазина: </span><span class="contacts_street">ул. Большая Конюшенная 19/8,
 							Санкт-Петербург</span></p>
 					<p class="contacts__phone">Для заказов по телефону: <a href="tel:88124502525"
 							class="contacts__link">8 812
 							450-25-25
-						</a><br>(с 10 до 20 ежедневно)</p>
+						</a>(с 10 до 20 ежедневно)</p>
 					<a href="contacts.html" class="contacts__button">Форма обратной связи</a>
 				</div>
 			</div>
@@ -199,8 +202,8 @@
 					class="socials-list__button socials-list__button--facebook"></a></li>
 			<li class="socials-list__item"><a href="#" aria-label="Мы ВКонтакте"
 					class="socials-list__button socials-list__button--vk"></a></li>
-					
-					
+
+
 		</ul>
 		<ul class="page-footer__quality-control quality-control">
 			<li class="quality-control__item quality-control__item--love"><a href="#"
@@ -210,7 +213,7 @@
 			<li class="quality-control__item"><a href="#" class="quality-control__link link">О производстве</a></li>
 			<li class="quality-control__item"><a href="#" class="quality-control__link link">Экологические стандарты</a>
 			</li>
-			
+
 		</ul>
 		<div class="page-footer__developer developer">
 			<p class="developer__copyright">Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss"
